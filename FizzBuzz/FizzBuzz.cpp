@@ -3,14 +3,16 @@
 
 #include <iostream>
 #include <string>
+#include <regex>
 #include "FizzBuzzMethod.h"
 
 using namespace std;
 
 int main()
 {
-    int num;
+    string num;
     string result;
+    regex re(R"(\d+)");
 
     FizzBuzzMethod fb;
 
@@ -22,7 +24,14 @@ int main()
     {
         cin >> num;
 
-        result = fb.fizzBuzz(num);
+        if (!regex_match(num, re)) {
+            cout << "整数を入力してください" << endl;
+            continue;
+        }
+
+        int i = stoi(num);
+
+        result = fb.fizzBuzz(i);
 
         cout << result << endl;
     }
