@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// FizzBuzz”»’èŠÖ”
 string FizzBuzzMethod::fizzBuzz(int n)
 {
 	string result;

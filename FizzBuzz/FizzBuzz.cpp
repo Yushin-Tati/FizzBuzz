@@ -12,8 +12,10 @@ int main()
 {
     string num;
     string result;
+    // 整数のみの正規表現
     regex re(R"(\d+)");
 
+    // インスタンス生成
     FizzBuzzMethod fb;
 
     cout << "FizzBuzzApp" << endl;
@@ -22,17 +24,22 @@ int main()
 
     while (true)
     {
+        // コンソール入力
         cin >> num;
 
+        // バリデーション、整数
         if (!regex_match(num, re)) {
             cout << "整数を入力してください" << endl;
             continue;
         }
 
+        // stringからintへ型変換
         int i = stoi(num);
 
+        // FizzBuzzの判定関数
         result = fb.fizzBuzz(i);
 
+        // 出力
         cout << result << endl;
     }
     
